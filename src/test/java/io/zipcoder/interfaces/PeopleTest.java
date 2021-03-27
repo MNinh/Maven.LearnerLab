@@ -13,53 +13,53 @@ public class PeopleTest {
     Person monali = new Person(26, "Monali");
 
 
-    @Test
-    public void addTest() {
-        People<Person> people = new People<Person>();
-        people.add(mike);
-
-        boolean expected = true;
-        boolean actual = people.contains(mike);
-
-        Assert.assertTrue(actual);
-    }
-
-    @Test
-    public void removeTest() {
-        People<Person> people = new People<Person>();
-        people.add(mike);
-        people.remove(mike);
-
-        boolean actual = people.contains(mike);
-
-        Assert.assertFalse(actual);
-    }
-
-    @Test
-    public void removeAllTest() {
-        People<Person> people = new People<Person>();
-        people.add(mike);
-        people.add(xiong);
-        people.add(lena);
-        people.add(monali);
-        people.removeAll();
-
-        Integer expected = 0;
-        Integer actual = people.count();
-
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void findByIdTest() {
-        People<Person> people = new People<Person>();
-        people.add(mike);
-
-        Person expected = mike;
-        Person actual = people.findById(22);
-
-        Assert.assertEquals(expected, actual);
-
-
-    }
+//    @Test
+//    public void addTest() {
+//        People<Person> people = new People<Person>();
+//        people.add(mike);
+//
+//        boolean expected = true;
+//        boolean actual = people.contains(mike);
+//
+//        Assert.assertTrue(actual);
+//    }
+//
+//    @Test
+//    public void removeTest() {
+//        People<Person> people = new People<Person>();
+//        people.add(mike);
+//        people.remove(mike);
+//
+//        boolean actual = people.contains(mike);
+//
+//        Assert.assertFalse(actual);
+//    }
+//
+//    @Test
+//    public void removeAllTest() {
+//        People<Person> people = new People<Person>();
+//        people.add(mike);
+//        people.add(xiong);
+//        people.add(lena);
+//        people.add(monali);
+//        people.removeAll();
+//
+//        Integer expected = 0;
+//        Integer actual = people.count();
+//
+//        Assert.assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void findByIdTest() {
+//        People<Person> people = new People<Person>();
+//        people.add(mike);
+//
+//        Person expected = mike;
+//        Person actual = people.findById(22);
+//
+//        Assert.assertEquals(expected, actual);
+//
+//
+//    }
 }

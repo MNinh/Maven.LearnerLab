@@ -14,12 +14,37 @@ public class ZipCodeWilmingtonTest {
         //Given
         Instructors instructor = Instructors.getInstance();
         Students student = Students.getInstance();
-        ZipCodeWilmington zipcdoe = new ZipCodeWilmington();
+        ZipCodeWilmington zipcode = new ZipCodeWilmington();
+
         //When
-        zipcdoe.hostLecture(12, 20);
+        Teacher kris = instructor.findById(10);
+        Student mike = student.findById(22);
         double expected = 100;
-        Student learner = (Student) student.findById(22);
-        double actual = learner.getTotalStudyTime();
+        zipcode.hostLecture(kris, 280);
+        double actual = mike.getTotalStudyTime();
+
+
+
+        //Then
+        Assert.assertEquals(expected, actual,0);
+    }
+
+
+    @Test
+    public void testHostLecture2() {
+        //Given
+
+        Students student = Students.getInstance();
+        ZipCodeWilmington zipcode = new ZipCodeWilmington();
+
+        //When
+        Educator dolio = Educator.Dolio;
+        Student mike = student.findById(22);
+        double expected = 100;
+        zipcode.hostLecture(dolio, 280);
+        double actual = mike.getTotalStudyTime();
+
+
 
         //Then
         Assert.assertEquals(expected, actual,0);

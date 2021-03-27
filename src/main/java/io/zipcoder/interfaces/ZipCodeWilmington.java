@@ -11,22 +11,27 @@ import java.util.Map;
 
 public class ZipCodeWilmington {
 
+    private static final ZipCodeWilmington INSTANCE = new ZipCodeWilmington();
     private final Students students = Students.getInstance();
     private final Instructors instructors = Instructors.getInstance();
 
+    public static ZipCodeWilmington getInstance(){
+        return INSTANCE;
+    }
+
     public void hostLecture(Teacher teacher, double numberOfHours){
-        teacher.lecture((Learner[]) students.toArray(), numberOfHours);
+        teacher.lecture(students.getArray(), numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours){
-        Instructor instructor = (Instructor) instructors.findById(id);
-        instructor.lecture((Learner[]) students.toArray(), numberOfHours);
+        Instructor instructor =  instructors.findById(id);
+        instructor.lecture(students.getArray(), numberOfHours);
     }
 
     public Map<Student, Double> getStudyMap(){
 
         Map<Student, Double> studyMap = new HashMap<Student, Double>();
-        ArrayList<Student> students = new ArrayList<Student>();
+
         for(Student student : students){
             studyMap.put(student, student.getTotalStudyTime());
 

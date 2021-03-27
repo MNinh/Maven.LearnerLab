@@ -1,19 +1,37 @@
 package io.zipcoder.interfaces.People;
 
+import io.zipcoder.interfaces.Educator;
+
+import java.util.List;
+
 public class Instructors extends People<Instructor>{
 
     private static final Instructors INSTANCE = new Instructors();
 
     private Instructors() {
-        add(new Instructor(10, "Chris"));
-        add(new Instructor(11, "Kris"));
-        add(new Instructor(12, "Dolio"));
+        Instructor dolio = Educator.Dolio.getInstructor();
+        Instructor younger = Educator.Kris.getInstructor();
+        Instructor nobles = Educator.Chris.getInstructor();
+
+        this.add(dolio);
+        this.add(younger);
+        this.add(nobles);
 
     }
 
     public static Instructors getInstance() {
 
         return INSTANCE;
+    }
+
+
+    public Instructor[] getArray(){
+        List<Instructor> instructorsList = this.personList;
+        Instructor[] instructorsArray = new Instructor[instructorsList.size()];
+        for(int i = 0; i < instructorsList.size(); i++){
+            instructorsArray[i] = instructorsList.get(i);
+        }
+        return instructorsArray;
     }
 
 }
