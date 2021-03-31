@@ -49,4 +49,18 @@ public class ZipCodeWilmingtonTest {
         //Then
         Assert.assertEquals(expected, actual,0);
     }
+
+//    @Test
+//    public void getStudyMapTest(){
+//
+//        Students student = Students.getInstance();
+//        ZipCodeWilmington zipcode = new ZipCodeWilmington();
+//
+//        //When
+//        zipcode.getStudyMap();
+//        System.out.println(zipcode.getStudyMap());
+
+
+//    }
+
 }

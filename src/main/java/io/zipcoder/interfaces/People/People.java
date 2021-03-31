@@ -15,9 +15,9 @@ public abstract class People<E extends Person> implements Iterable<E>{
 
     public E findById(long id){
 
-        for( Person i : personList) {
+        for( E i : personList) {
             if (i.getId() == id) {
-                return (E) i;
+                return i;
             }
 
         }
